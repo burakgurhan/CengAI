@@ -86,15 +86,15 @@ class DocumentProcessor:
     def create_chunks(self, documents: List[Document]) -> List[Document]:
         """Split documents into chunks"""
         try:
-            logger.info("Creating chunks from documents")
+            logger.info(f"Creating chunks from {len(documents)} documents")
             processed_docs = self.text_splitter.split_documents(documents)
-            logger.info(f"Chunks created successfully. {len(processed_docs)} chunks")
+            logger.info(f"Created {len(processed_docs)} chunks")
             return processed_docs
-        
+            
         except Exception as e:
-            logger.error(f"Error creating chunks: {e}")
+            logger.error(f"Error creating chunks: {str(e)}")
             logger.debug(traceback.format_exc())
-            raise e
+            raise
         
     def get_embeddings(self):
         """Get OpenAI Embeddings"""
