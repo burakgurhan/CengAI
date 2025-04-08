@@ -59,7 +59,8 @@ class DocumentProcessor:
         self.file_path = file_path
         self.openai_api_key = openai_api_key
         self.text_splitter = RecursiveCharacterTextSplitter(
-            CHUNK_SIZE, CHUNK_OVERLAP
+            chunk_size=CHUNK_SIZE, 
+            chunk_overlap=CHUNK_OVERLAP
         )
 
     def load_documents(self) -> List[Document]:
