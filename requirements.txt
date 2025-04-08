@@ -6,3 +6,8 @@ langchain-core
 langchain-community
 streamlit
 pydantic
+faiss-cpu
+pypdf
+PyPDF2
+tiktoken
+watchdog
